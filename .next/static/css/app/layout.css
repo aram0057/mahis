@@ -593,6 +593,9 @@ video {
 .mt-8{
   margin-top: 2rem;
 }
+.mb-6{
+  margin-bottom: 1.5rem;
+}
 .inline-block{
   display: inline-block;
 }
@@ -646,6 +649,9 @@ video {
 }
 .w-px{
   width: 1px;
+}
+.w-12{
+  width: 3rem;
 }
 .max-w-3xl{
   max-width: 48rem;
@@ -727,6 +733,9 @@ video {
 }
 .gap-8{
   gap: 2rem;
+}
+.gap-3{
+  gap: 0.75rem;
 }
 .overflow-hidden{
   overflow: hidden;

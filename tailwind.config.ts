@@ -9,18 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Mahis brand palette — refined, dark luxury
-        "mahis-black": "#0A0A0A",
-        "mahis-white": "#F5F2ED",
-        "mahis-cream": "#E8E0D0",
-        "mahis-gold": "#C9A96E",
-        "mahis-gold-light": "#E8C98A",
-        "mahis-grey": "#2A2A2A",
-        "mahis-grey-mid": "#555555",
+        // Mahis brand palette — new brand direction
+        "mahis-black": "#0D0D0D",
+        "mahis-white": "#FFFFFF",
+        "mahis-cream": "#F7F7F5",
+        "mahis-gold": "#FFE500",
+        "mahis-gold-light": "#FF6B00",
+        "mahis-grey": "#E8E8E8",
+        "mahis-grey-mid": "#999999",
         "mahis-grey-light": "#999999",
       },
       fontFamily: {
-        display: ["var(--font-display)", "serif"],
+        display: ["var(--font-display)", "sans-serif"],
+        condensed: ["var(--font-condensed)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },

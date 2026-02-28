@@ -29,10 +29,10 @@ export function Preloader({ onComplete }: PreloaderProps) {
     const delayPerPath = 0.2;
     const pointsDelay: number[] = [];
 
-    // All paths start fully covering the screen (points at 0 = top)
+    // All paths start fully covering the screen (points at 100 = bottom fills up to top)
     const allPoints: number[][] = [
-      Array(numPoints).fill(0),
-      Array(numPoints).fill(0),
+      Array(numPoints).fill(100),
+      Array(numPoints).fill(100),
     ];
 
     const paths = [path1Ref.current, path2Ref.current];
@@ -94,7 +94,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
       pointsDelay[i] = Math.random() * delayPointsMax;
     }
 
-    // Animate each path's points to 100 (off screen downward)
+    // Animate each path's points to 0 (sweep upward off screen)
     for (let i = 0; i < numPaths; i++) {
       const points = allPoints[i];
       const pathDelay = delayPerPath * (numPaths - i - 1);
@@ -103,7 +103,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
         const delay = pointsDelay[j];
         tl.to(
           points,
-          { [j]: 100 },
+          { [j]: 0 },
           delay + pathDelay
         );
       }
@@ -127,14 +127,14 @@ export function Preloader({ onComplete }: PreloaderProps) {
         aria-hidden
       >
         <defs>
-          {/* Mahis gold gradient — path 2 (back) */}
+          {/* Mahis yellow gradient — path 2 (back) */}
           <linearGradient id="mahis-gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#C9A96E" />
-            <stop offset="100%" stopColor="#E8C98A" />
+            <stop offset="0%" stopColor="#FFE500" />
+            <stop offset="100%" stopColor="#FFED4A" />
           </linearGradient>
           {/* Mahis dark gradient — path 1 (front) */}
           <linearGradient id="mahis-gradient-2" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#0a0a0aff" />
+            <stop offset="0%" stopColor="#0D0D0D" />
             <stop offset="100%" stopColor="#2A2A2A" />
           </linearGradient>
         </defs>

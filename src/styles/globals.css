@@ -1,22 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,700;0,800;0,900;1,300;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-display: 'Cormorant Garamond', serif;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-condensed: 'Barlow Condensed', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --font-mono: 'DM Mono', monospace;
 
-  /* Mahis colour tokens */
-  --color-black: #0A0A0A;
-  --color-white: #F5F2ED;
-  --color-cream: #E8E0D0;
-  --color-gold: #C9A96E;
-  --color-gold-light: #E8C98A;
-  --color-grey: #2A2A2A;
-  --color-grey-mid: #555555;
+  /* Mahis colour tokens — new brand direction */
+  --color-black: #0D0D0D;
+  --color-white: #FFFFFF;
+  --color-cream: #F7F7F5;
+  --color-gold: #FFE500;        /* yellow — primary accent */
+  --color-gold-light: #FF6B00;  /* orange — secondary accent */
+  --color-grey: #E8E8E8;
+  --color-grey-mid: #999999;
   --color-grey-light: #999999;
 
   /* Easing */
@@ -31,8 +32,8 @@
 }
 
 html {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-black);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -75,7 +76,7 @@ html.lenis {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-black);
+  background: var(--color-white);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -86,6 +87,10 @@ html.lenis {
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
+  }
+
+  .font-condensed {
+    font-family: var(--font-condensed);
   }
 
   .text-balance {

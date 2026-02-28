@@ -27,12 +27,12 @@ export function Nav() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 mix-blend-difference"
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 bg-mahis-white border-b border-mahis-black"
     >
       {/* Logo */}
       <Link
         href="/"
-        className="font-display text-mahis-white text-xl tracking-[0.2em] uppercase"
+        className="font-display text-mahis-black text-2xl tracking-[0.15em] uppercase"
       >
         Mahis
       </Link>
@@ -43,7 +43,7 @@ export function Nav() {
           <li key={link.href}>
             <Link
               href={link.href}
-              className="font-body text-mahis-grey-light text-fluid-xs tracking-widest uppercase hover:text-mahis-white transition-colors duration-300"
+              className="font-body text-mahis-grey-mid text-fluid-xs tracking-widest uppercase hover:text-mahis-black transition-colors duration-300"
             >
               {link.label}
             </Link>
@@ -54,7 +54,7 @@ export function Nav() {
       {/* CTA */}
       <Link
         href="/contact"
-        className="font-body text-fluid-xs tracking-widest uppercase border border-mahis-gold text-mahis-gold px-5 py-2 hover:bg-mahis-gold hover:text-mahis-black transition-all duration-300"
+        className="font-body text-fluid-xs tracking-widest uppercase bg-mahis-gold text-mahis-black border border-mahis-black px-5 py-2 hover:bg-mahis-black hover:text-mahis-gold transition-all duration-300"
       >
         Start a project
       </Link>

@@ -43,7 +43,7 @@ export function useLaptopScene(
     keyLight.position.set(3, 5, 5);
     scene.add(keyLight);
 
-    const rimLight = new THREE.DirectionalLight(0xffe500, 0.6);
+    const rimLight = new THREE.DirectionalLight(0x2952e3, 0.6);
     rimLight.position.set(-4, 1, -4);
     scene.add(rimLight);
 
@@ -146,8 +146,8 @@ export function useLaptopScene(
         c.fillStyle = grd;
         c.fillRect(0, 0, 1280, 1200);
 
-        // Yellow rule line
-        c.strokeStyle = "#ffe500";
+        // Cobalt rule line
+        c.strokeStyle = "#2952e3";
         c.lineWidth = 2;
         c.beginPath(); c.moveTo(560, 270); c.lineTo(720, 270); c.stroke();
 
@@ -158,7 +158,7 @@ export function useLaptopScene(
         c.textAlign = "center";
         c.fillText("BRAND ELEVATION", 640, 390);
         c.font = "italic 300 82px Arial, sans-serif";
-        c.fillStyle = "#ff6b00";
+        c.fillStyle = "#6b8af7";
         c.letterSpacing = "0px";
         c.fillText("through web", 640, 490);
         c.font = "900 82px Arial, sans-serif";
@@ -210,7 +210,7 @@ export function useLaptopScene(
         c.fillRect(c1.x, c1.y, c1.w, 220);
         c.strokeStyle = "#0d0d0d18"; c.lineWidth = 0.5;
         c.strokeRect(c1.x, c1.y, c1.w, c1.h);
-        c.strokeStyle = "#ffe500"; c.lineWidth = 2;
+        c.strokeStyle = "#2952e3"; c.lineWidth = 2;
         c.beginPath(); c.moveTo(c1.x, c1.y); c.lineTo(c1.x + 70, c1.y); c.stroke();
         // Card 1 label in image area
         c.font = "300 9px monospace"; c.letterSpacing = "4px";
@@ -238,7 +238,7 @@ export function useLaptopScene(
         c.fillRect(c2.x, c2.y, c2.w, 220);
         c.strokeStyle = "#0d0d0d18"; c.lineWidth = 0.5;
         c.strokeRect(c2.x, c2.y, c2.w, c2.h);
-        c.strokeStyle = "#ffe500"; c.lineWidth = 2;
+        c.strokeStyle = "#2952e3"; c.lineWidth = 2;
         c.beginPath(); c.moveTo(c2.x, c2.y); c.lineTo(c2.x + 70, c2.y); c.stroke();
         c.font = "300 9px monospace"; c.letterSpacing = "4px";
         c.fillStyle = "#99999960"; c.textAlign = "left";

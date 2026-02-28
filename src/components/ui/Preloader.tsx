@@ -129,8 +129,8 @@ export function Preloader({ onComplete }: PreloaderProps) {
         <defs>
           {/* Mahis yellow gradient — path 2 (back) */}
           <linearGradient id="mahis-gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#FFE500" />
-            <stop offset="100%" stopColor="#FFED4A" />
+            <stop offset="0%" stopColor="#2952E3" />
+            <stop offset="100%" stopColor="#4D6FE8" />
           </linearGradient>
           {/* Mahis dark gradient — path 1 (front) */}
           <linearGradient id="mahis-gradient-2" x1="0%" y1="0%" x2="0%" y2="100%">

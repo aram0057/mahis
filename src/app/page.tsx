@@ -1,4 +1,5 @@
 import { Hero } from "@/components/gsap/Hero";
+import { StaggeredGrid } from "@/components/gsap/StaggeredGrid";
 
 export default function Home() {
   return (
@@ -74,6 +75,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <StaggeredGrid />
 
       {/* Studio statement */}
       <section className="min-h-[60vh] bg-mahis-white px-8 py-section flex items-center border-t border-mahis-black">

@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,700;0,800;0,900;1,300;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Barlow+Condensed:ital,wght@0,300;0,400;0,700;0,800;0,900;1,300;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-display: 'Bebas Neue', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
   --font-condensed: 'Barlow Condensed', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --font-mono: 'DM Mono', monospace;
@@ -14,8 +14,8 @@
   --color-black: #0D0D0D;
   --color-white: #FFFFFF;
   --color-cream: #F7F7F5;
-  --color-gold: #FFE500;        /* yellow — primary accent */
-  --color-gold-light: #FF6B00;  /* orange — secondary accent */
+  --color-gold: #2952E3;        /* cobalt — primary accent */
+  --color-gold-light: #6B8AF7;  /* indigo — secondary accent */
   --color-grey: #E8E8E8;
   --color-grey-mid: #999999;
   --color-grey-light: #999999;

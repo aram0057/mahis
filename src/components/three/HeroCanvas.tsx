@@ -22,11 +22,11 @@ export function HeroCanvas() {
       geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
 
       const material = new THREE.PointsMaterial({
-        color: 0xc9a96e, // mahis-gold
+        color: 0xffe500, // chrome yellow
         size: 0.015,
         sizeAttenuation: true,
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.3,
       });
 
       const particles = new THREE.Points(geometry, material);

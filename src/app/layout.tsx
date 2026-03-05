@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-mahis-white text-mahis-black antialiased">
+      <body className="bg-mahis-black text-mahis-white antialiased cursor-none">
         <LayoutClient>{children}</LayoutClient>
       </body>
     </html>

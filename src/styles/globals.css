@@ -1,24 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Barlow+Condensed:ital,wght@0,300;0,400;0,700;0,800;0,900;1,300;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-condensed: 'Barlow Condensed', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'DM Mono', monospace;
+  /* Mahis colour tokens */
+  --color-black: #0A0A0A;
+  --color-white: #F5F5F5;
+  --color-yellow: #FFE500;
+  --color-muted: #555555;
+  --color-surface: #141414;
+  --color-border: #1F1F1F;
 
-  /* Mahis colour tokens — new brand direction */
-  --color-black: #0D0D0D;
-  --color-white: #FFFFFF;
-  --color-cream: #F7F7F5;
-  --color-gold: #2952E3;        /* cobalt — primary accent */
-  --color-gold-light: #6B8AF7;  /* indigo — secondary accent */
-  --color-grey: #E8E8E8;
-  --color-grey-mid: #999999;
-  --color-grey-light: #999999;
+  /* Chrome/metallic gradient */
+  --chrome-gradient: linear-gradient(135deg, #C0C0C0 0%, #F5F5F5 50%, #C0C0C0 100%);
 
   /* Easing */
   --ease-mahis: cubic-bezier(0.76, 0, 0.24, 1);
@@ -32,12 +28,29 @@
 }
 
 html {
-  background-color: var(--color-white);
-  color: var(--color-black);
-  font-family: var(--font-body);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: 'Space Grotesk', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+body {
+  cursor: none;
+}
+
+/* Noise texture overlay — premium matte feel */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 200;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
 }
 
 /* Lenis smooth scroll */
@@ -61,43 +74,32 @@ html.lenis {
   pointer-events: none;
 }
 
-/* Custom cursor */
-
-
 /* Selection */
 ::selection {
-  background: var(--color-gold);
-  color: var(--color-black);
+  background: #FFE500;
+  color: #0A0A0A;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-white);
+  background: #0A0A0A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-grey-mid);
+  background: #FFE500;
 }
 
 /* Utility classes */
 @layer utilities {
-  .font-display {
-    font-family: var(--font-display);
-  }
-
-  .font-condensed {
-    font-family: var(--font-condensed);
+  .will-change-transform {
+    will-change: transform;
   }
 
   .text-balance {
     text-wrap: balance;
-  }
-
-  .will-change-transform {
-    will-change: transform;
   }
 }

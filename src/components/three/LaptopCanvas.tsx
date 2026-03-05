@@ -17,7 +17,7 @@ export const LaptopCanvas = forwardRef<HTMLDivElement, LaptopCanvasProps>(
     useLaptopScene(canvasRef, { progressRef, onReady });
 
     return (
-      <div ref={ref} className="absolute inset-0 z-[2]">
+      <div ref={ref} className="absolute inset-0 z-[2] pointer-events-none">
         <canvas ref={canvasRef} className="w-full h-full" aria-hidden />
       </div>
     );

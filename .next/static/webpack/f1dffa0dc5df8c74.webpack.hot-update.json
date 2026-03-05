@@ -1,0 +1,1 @@
+{"c":["app/page","app/layout","webpack"],"r":[],"m":["(app-pages-browser)/./node_modules/three/examples/jsm/loaders/GLTFLoader.js","(app-pages-browser)/./node_modules/three/examples/jsm/utils/BufferGeometryUtils.js","(app-pages-browser)/./src/components/three/LaptopCanvas.tsx","(app-pages-browser)/./src/lib/useLaptopScene.ts"]}

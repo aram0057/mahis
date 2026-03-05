@@ -29,7 +29,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
     const delayPerPath = 0.2;
     const pointsDelay: number[] = [];
 
-    // All paths start fully covering the screen (points at 100 = bottom fills up to top)
+    // All paths start fully covering the screen
     const allPoints: number[][] = [
       Array(numPoints).fill(100),
       Array(numPoints).fill(100),
@@ -37,7 +37,6 @@ export function Preloader({ onComplete }: PreloaderProps) {
 
     const paths = [path1Ref.current, path2Ref.current];
 
-    // Render function — redraws SVG paths each tick
     function render() {
       for (let i = 0; i < numPaths; i++) {
         const path = paths[i];
@@ -56,10 +55,9 @@ export function Preloader({ onComplete }: PreloaderProps) {
       }
     }
 
-    // Initialise — draw paths in closed (covering) state
     render();
 
-    // Counter animation
+    // Counter animation 0 → 100
     const counterObj = { val: 0 };
     gsap.to(counterObj, {
       val: 100,
@@ -74,13 +72,12 @@ export function Preloader({ onComplete }: PreloaderProps) {
       },
     });
 
-    // After counter — sweep the wave off screen
+    // Wave sweep after counter
     const tl = gsap.timeline({
       delay: 1.8,
       onUpdate: render,
       defaults: { ease: "power2.inOut", duration: 0.9 },
       onComplete: () => {
-        // Fade out the studio name text then call onComplete
         gsap.to(studioRef.current, {
           opacity: 0,
           duration: 0.3,
@@ -89,7 +86,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
       },
     });
 
-    // Randomise point delays for organic wave
+    // Randomise point delays for organic wave shape
     for (let i = 0; i < numPoints; i++) {
       pointsDelay[i] = Math.random() * delayPointsMax;
     }
@@ -101,17 +98,11 @@ export function Preloader({ onComplete }: PreloaderProps) {
 
       for (let j = 0; j < numPoints; j++) {
         const delay = pointsDelay[j];
-        tl.to(
-          points,
-          { [j]: 0 },
-          delay + pathDelay
-        );
+        tl.to(points, { [j]: 0 }, delay + pathDelay);
       }
     }
 
-    return () => {
-      tl.kill();
-    };
+    return () => { tl.kill(); };
   }, [mounted, onComplete]);
 
   if (!mounted) return null;
@@ -126,42 +117,35 @@ export function Preloader({ onComplete }: PreloaderProps) {
         preserveAspectRatio="none"
         aria-hidden
       >
-        <defs>
-          {/* Mahis yellow gradient — path 2 (back) */}
-          <linearGradient id="mahis-gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#2952E3" />
-            <stop offset="100%" stopColor="#4D6FE8" />
-          </linearGradient>
-          {/* Mahis dark gradient — path 1 (front) */}
-          <linearGradient id="mahis-gradient-2" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#0D0D0D" />
-            <stop offset="100%" stopColor="#2A2A2A" />
-          </linearGradient>
-        </defs>
-
-        {/* Back path — gold */}
-        <path ref={path2Ref} fill="url(#mahis-gradient-1)" />
-        {/* Front path — dark, reveals first */}
-        <path ref={path1Ref} fill="url(#mahis-gradient-2)" />
+        {/* Back path — dark, revealed after yellow sweeps away */}
+        <path ref={path2Ref} fill="#0A0A0A" />
+        {/* Front path — yellow, sweeps up first */}
+        <path ref={path1Ref} fill="#FFE500" />
       </svg>
 
-      {/* Studio name + counter — sits above wave */}
+      {/* Studio name + counter */}
       <div
         ref={studioRef}
         className="fixed inset-0 z-10 flex flex-col items-center justify-center pointer-events-none"
       >
-        <p className="font-display text-mahis-white text-fluid-3xl italic tracking-tight mb-6">
-          Mahis
+        <p
+          className="font-sans font-bold text-mahis-black uppercase"
+          style={{
+            fontSize: "clamp(4rem, 10vw, 8rem)",
+            letterSpacing: "-0.04em",
+          }}
+        >
+          MAHIS
         </p>
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-px bg-mahis-gold" />
+        <div className="flex items-center gap-4 mt-6">
+          <div className="w-16 h-px bg-mahis-black" />
           <span
             ref={counterRef}
-            className="font-mono text-mahis-gold text-fluid-xs tracking-widest"
+            className="font-sans font-medium text-mahis-black text-fluid-xs uppercase tracking-mono"
           >
             000
           </span>
-          <div className="w-12 h-px bg-mahis-gold" />
+          <div className="w-16 h-px bg-mahis-black" />
         </div>
       </div>
     </div>
